@@ -5,7 +5,7 @@ use std::{
 };
 
 fn main() {
-    let cpus = thread::available_parallelism().unwrap().get();
+    let _cpus = thread::available_parallelism().unwrap().get();
 
     let flag = Arc::new(Mutex::new(false));
     let cond = Arc::new(Condvar::new());
