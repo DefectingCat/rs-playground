@@ -1,5 +1,5 @@
 [package]
-name = "condvar"
+name = "rs-playground"
 version = "0.1.0"
 edition = "2021"
 
@@ -17,6 +17,6 @@ reqwest = "0.11.22"
 name = "condvar"
 
 [workspace]
-members = ["mandelbrot"]
+members = ["mandelbrot", "unsafe-tree", "wake-tree"]
 
 [workspace.dependencies]
