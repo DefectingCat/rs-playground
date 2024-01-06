@@ -38,6 +38,9 @@ const fn len(strs: &[&str]) -> usize {
 }
 
 fn main() {
+    const COMLIE_TEST: [u32; 5] = five_numbers();
+    println!("compile test number {:?}", COMLIE_TEST);
+
     let five_numbers = five_numbers();
     println!("five numerbs {:?}", five_numbers);
 
