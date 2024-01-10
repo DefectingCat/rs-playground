@@ -17,6 +17,7 @@ fn main() {
         let mut counter = 0;
 
         while counter < 3 {
+            println!("Child wating");
             while !*lock {
                 lock = ccond.wait(lock).unwrap();
             }
