@@ -16,6 +16,8 @@ tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 log = "0.4.20"
 tokio-cron-scheduler = "0.9.4"
+serde = { version = "1.0.195", features = ["derive", "serde_derive"] }
+serde_json = "1.0.111"
 
 [[example]]
 name = "condvar"

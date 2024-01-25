@@ -1087,6 +1087,8 @@ dependencies = [
  "futures",
  "log",
  "reqwest",
+ "serde",
+ "serde_json",
  "smallvec",
  "tokio",
  "tokio-cron-scheduler",
