@@ -1,5 +1,6 @@
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
+use serde_json::{json, Value};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Test {
@@ -19,6 +20,32 @@ impl Default for Test {
 }
 
 fn main() -> Result<()> {
+    {
+        let data = r#"
+        {
+            "name": "xfy",
+            "age": 14,
+            "test": null
+        }
+        "#;
+
+        let unamed: Value = serde_json::from_str(data)?;
+        println!("access unamed {:?}", unamed["name"].as_str());
+        let named: Test = serde_json::from_str(data)?;
+        println!("access named {:?}", named.name);
+    }
+
+    {
+        let named = Test::default();
+        let unamed = json!({
+            "name": "xfy",
+            "age": 14,
+            "test": null
+        });
+        println!("unamed json string {}", serde_json::to_string(&unamed)?);
+        println!("named json string {}", serde_json::to_string(&named)?);
+    }
+
     let data = r#"
         {
             "name": "xfy",
@@ -28,8 +55,9 @@ fn main() -> Result<()> {
         "#;
 
     println!(
-        "deserialize named {:?} unamed",
-        deserialize_named::<Test>(data)?
+        "deserialize named {:?} unamed {:>}",
+        deserialize_named::<Test>(data)?,
+        deserialize_named::<Value>(data)?
     );
 
     let data = Test::default();
