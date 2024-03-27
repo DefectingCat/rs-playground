@@ -23,6 +23,6 @@ serde_json = "1.0.111"
 name = "condvar"
 
 [workspace]
-members = ["mandelbrot", "unsafe-tree", "wake-tree"]
+members = ["mandelbrot", "timed-future", "unsafe-tree", "wake-tree"]
 
 [workspace.dependencies]
