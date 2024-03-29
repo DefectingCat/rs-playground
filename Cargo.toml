@@ -6,18 +6,19 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.79"
-smallvec = "1.11.2"
-tokio = { version = "1.35.1", features = ["full"] }
-tokio-stream = "0.1.14"
+anyhow = "1.0.81"
+smallvec = "1.13.2"
+tokio = { version = "1.36.0", features = ["full"] }
+tokio-stream = "0.1.15"
 futures = "0.3.30"
-reqwest = "0.11.23"
+reqwest = "0.11.27"
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
-log = "0.4.20"
+log = "0.4.21"
 tokio-cron-scheduler = "0.9.4"
-serde = { version = "1.0.195", features = ["derive", "serde_derive"] }
-serde_json = "1.0.111"
+serde = { version = "1.0.197", features = ["derive", "serde_derive"] }
+serde_json = "1.0.115"
+rand = "0.8.5"
 
 [[example]]
 name = "condvar"
